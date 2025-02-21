@@ -25,6 +25,10 @@ popupBTN.addEventListener("click", function() {
 
 document.getElementById("container").addEventListener("click", function(e) {
 	const parentHTML = e.target.parentElement.innerHTML;
+	if (e.target.classList.contains("item-close-button")) {
+		items.delete(parentHTML);
+		drawItems();
+	}
 	if (e.target.classList.contains("item-button-right") && items.get(parentHTML) < 4) {
 		items.set(parentHTML, items.get(parentHTML) + 1);
 		drawItems();
@@ -38,11 +42,15 @@ document.getElementById("container").addEventListener("click", function(e) {
 function createItem() {
 	const itemContainer = document.createElement("div");
 	const item = document.createElement("p");
+	const closeBTN = document.createElement("input");
 	const itemForwardBTN = document.createElement("input");
 	const itemBackBTN = document.createElement("input");
 
 	itemContainer.className = "item-container";
 	item.className = "item";
+	closeBTN.className = "item-close-button";
+	closeBTN.type = "image";
+	closeBTN.src = "./res/x.svg";
 	itemForwardBTN.className = "item-button-right";
 	itemForwardBTN.type = "image";
 	itemForwardBTN.src = "./res/right-arrow.svg";
@@ -52,7 +60,7 @@ function createItem() {
 
 	item.innerHTML = usrInput + "<br/>" + new Date().toDateString();
 
-	itemContainer.append(item, itemBackBTN, itemForwardBTN);
+	itemContainer.append(closeBTN, item, itemBackBTN, itemForwardBTN);
 	items.set(itemContainer.innerHTML, 0);
 	console.log(itemContainer.innerHTML);
 

@@ -94,6 +94,14 @@ body {
     margin: "0 5px 0 5px";
 }
 
+.item-close-button {
+    transition: all 0.25s;
+}
+
+.item-close-button:hover {
+    transform: scale(1.75);
+}
+
 .item-button-left {
     transition: all 0.25s;
 }
