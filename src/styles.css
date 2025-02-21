@@ -1,0 +1,133 @@
+
+body {
+    background-image: url("./res/sunset.jpg");
+    background-size: cover;
+    font-size: 1vw;
+    color: white;
+}
+
+.buttons {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: Copperplate, Papyrus, fantasy;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px;
+    margin: 15px;
+    transition: all 0.25s;
+}
+
+.buttons:hover {
+    transform: scale(1.25);
+}
+
+.input-box {
+    outline: none;
+    font-family: "Courier new";
+    position: fixed;
+    height: 10vw;
+    width: 30vw;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    overflow: auto;
+    border: 20px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 5px;
+    margin: 10px;
+}
+
+.center-text {
+    text-align: center;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 5px;
+    margin: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    flex: 1;
+    text-align: center;
+    height: 60vh;
+    margin: 5px;
+    overflow: auto;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.item {
+    text-align: left;
+    font-family: "Courier new";
+    margin: "0 5px 0 5px";
+}
+
+.item-button-left {
+    transition: all 0.25s;
+}
+
+.item-button-left:hover {
+    transform: scale(1.75);
+}
+
+.item-button-right {
+    transition: all 0.25s;
+}
+
+.item-button-right:hover {
+    transform: scale(1.75);
+}
+
+.box:nth-child(1) {
+    background: rgba(4, 6, 19, 0.3);
+
+}
+.box:nth-child(2) {
+    background: rgba(23, 29, 61, 0.3);
+}
+.box:nth-child(3) {
+    background: rgba(79, 55, 87, 0.3);
+}
+.box:nth-child(4) {
+    background: rgba(170, 75, 95, 0.3);
+}
+.box:nth-child(5) {
+    background: rgba(233, 91, 97, 0.3);
+}
+
+.title {
+    margin: 5px;
+    font-family: Copperplate, Papyrus, fantasy;
+}
