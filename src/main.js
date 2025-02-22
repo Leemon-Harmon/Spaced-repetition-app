@@ -1,7 +1,9 @@
 const popupBTN = document.getElementById("new-item-btn");
-const items = new Map();
+const items = new Map(JSON.parse(localStorage.items));
+const storedItems = window.localStorage;
 let usrInput = "";
 
+drawItems();
 
 popupBTN.addEventListener("click", function() {
 	const inputBox = document.createElement("div");
@@ -31,6 +33,7 @@ document.getElementById("container").addEventListener("click", function(e) {
 	}
 	if (e.target.classList.contains("item-button-right") && items.get(parentHTML) < 4) {
 		items.set(parentHTML, items.get(parentHTML) + 1);
+		console.log(storedItems.getItem(parentHTML));
 		drawItems();
 	}
 	if (e.target.classList.contains("item-button-left") && items.get(parentHTML) > 0) {
@@ -70,6 +73,9 @@ function drawItems() {
 	for (i = 1; i <= 5; i++) {
 		document.getElementById(i).replaceChildren(document.getElementById(i).firstElementChild);
 	}
+
+	localStorage.items = JSON.stringify(Array.from(items.entries()));
+
 	for (const key of items.keys()) {
 		const itemContainer = document.createElement("div");
 		itemContainer.innerHTML = key;
