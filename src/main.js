@@ -1,7 +1,13 @@
 const popupBTN = document.getElementById("new-item-btn");
-const items = new Map(JSON.parse(localStorage.items));
 const storedItems = window.localStorage;
 let usrInput = "";
+let items;
+
+if (window.localStorage.length === 0) {
+	items = new Map();
+} else {
+	items = new Map(JSON.parse(localStorage.items));
+}
 
 drawItems();
 
