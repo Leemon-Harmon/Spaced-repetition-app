@@ -39,7 +39,6 @@ document.getElementById("container").addEventListener("click", function(e) {
 	}
 	if (e.target.classList.contains("item-button-right") && items.get(parentHTML) < 4) {
 		items.set(parentHTML, items.get(parentHTML) + 1);
-		console.log(storedItems.getItem(parentHTML));
 		drawItems();
 	}
 	if (e.target.classList.contains("item-button-left") && items.get(parentHTML) > 0) {
@@ -71,8 +70,6 @@ function createItem() {
 
 	itemContainer.append(closeBTN, item, itemBackBTN, itemForwardBTN);
 	items.set(itemContainer.innerHTML, 0);
-	console.log(itemContainer.innerHTML);
-
 }
 
 function drawItems() {
