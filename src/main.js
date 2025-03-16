@@ -33,28 +33,31 @@ popupBTN.addEventListener("click", function() {
 
 document.getElementById("container").addEventListener("click", function(e) {
 	const parentHTML = e.target.parentElement.innerHTML;
+	const grandparentHTML = e.target.parentElement.parentElement.innerHTML;
 	if (e.target.classList.contains("item-close-button")) {
 		items.delete(parentHTML);
 		drawItems();
 	}
-	if (e.target.classList.contains("item-button-right") && items.get(parentHTML) < 4) {
-		items.set(parentHTML, items.get(parentHTML) + 1);
+	if (e.target.classList.contains("item-button-right") && items.get(grandparentHTML) < 4) {
+		items.set(grandparentHTML, items.get(grandparentHTML) + 1);
 		drawItems();
 	}
-	if (e.target.classList.contains("item-button-left") && items.get(parentHTML) > 0) {
-		items.set(parentHTML, items.get(parentHTML) - 1);
+	if (e.target.classList.contains("item-button-left") && items.get(grandparentHTML) > 0) {
+		items.set(grandparentHTML, items.get(grandparentHTML) - 1);
 		drawItems();
 	}
 });
 
 function createItem() {
 	const itemContainer = document.createElement("div");
+	const buttonContainer = document.createElement("div");
 	const item = document.createElement("p");
 	const closeBTN = document.createElement("input");
 	const itemForwardBTN = document.createElement("input");
 	const itemBackBTN = document.createElement("input");
 
 	itemContainer.className = "item-container";
+	buttonContainer.className = "button-container";
 	item.className = "item";
 	closeBTN.className = "item-close-button";
 	closeBTN.type = "image";
@@ -68,7 +71,8 @@ function createItem() {
 
 	item.innerHTML = usrInput + "<br/>" + new Date().toDateString();
 
-	itemContainer.append(closeBTN, item, itemBackBTN, itemForwardBTN);
+	buttonContainer.append(itemBackBTN, itemForwardBTN);
+	itemContainer.append(closeBTN, item, buttonContainer);
 	items.set(itemContainer.innerHTML, 0);
 }
 

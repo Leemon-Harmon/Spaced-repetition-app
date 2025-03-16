@@ -105,6 +105,7 @@ body {
 }
 
 .item-button-left {
+    padding: 5px;
     transition: all 0.25s;
 }
 
@@ -113,6 +114,7 @@ body {
 }
 
 .item-button-right {
+    padding: 5px;
     transition: all 0.25s;
 }
 
